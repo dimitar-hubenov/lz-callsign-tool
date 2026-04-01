@@ -1,4 +1,4 @@
-name: Daily Sync and Deploy
+name: Daily Sync DB
 
 on:
   # Run daily at 2 AM UTC
@@ -8,14 +8,13 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
-  # Also run on push to main/master to keep site updated with code changes
+  # Also run on push to master to keep site updated with code changes
   push:
     branches:
-      - main
       - master
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,9 +24,6 @@ concurrency:
 
 jobs:
   sync-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
@@ -50,16 +46,14 @@ jobs:
           NODE_OPTIONS: '--dns-result-order=ipv4first'
 
       - name: Build static site
-        run: npm run build
+        run: npm run build -- --base=/${{ github.event.repository.name }}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: './dist'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist

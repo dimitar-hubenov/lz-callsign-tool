@@ -11,6 +11,9 @@ public/data/callsigns.json
 .vscode/
 .idea/
 
+# Vite
+.vite/
+
 # OS
 .DS_Store
 Thumbs.db
