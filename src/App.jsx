@@ -60,15 +60,15 @@ function App() {
   const [results, setResults] = useState([])
   const [digits, setDigits] = useState(['1', '3', '5', '7', '9'])
   const [status, setStatus] = useState('')
-  const [dbStatus, setDbStatus] = useState('Loading database...')
+  const [dbStatus, setDbStatus] = useState('Зареждане на данни...')
 
   // Load database on mount
   useEffect(() => {
     loadDatabase()
       .then(() => setDbStatus(''))
       .catch(err => {
-        console.error('Database load error:', err)
-        setDbStatus('Failed to load database')
+        console.error('Грешка при зареждане на данни:', err)
+        setDbStatus('Грешка при зареждането на данни')
       })
   }, [])
 
@@ -79,7 +79,7 @@ function App() {
 
   const runSearch = useCallback(() => {
     if (!databaseLoaded) {
-      setStatus('Loading database...')
+      setStatus('Зареждане на данни...')
       return
     }
 
@@ -89,7 +89,7 @@ function App() {
       return
     }
 
-    setStatus('Searching...')
+    setStatus('Търсене...')
 
     // Use setTimeout to allow UI to update
     setTimeout(() => {
@@ -124,7 +124,7 @@ function App() {
       }
 
       setResults(rows)
-      setStatus(`Found ${rows.length} matching patterns`)
+      setStatus(`Намерени са ${rows.length} отговарящи суфикса`)
     }, 0)
   }, [suffix, length, region])
 
@@ -198,7 +198,7 @@ function App() {
             {/* Region Select */}
             <div className="flex-1 w-full">
               <label className="block text-sm font-medium text-gray-300 mb-2">
-                Region
+                Регион
               </label>
               <div className="relative">
                 <select
@@ -220,7 +220,7 @@ function App() {
             {/* Length Select */}
             <div className="flex-1 w-full">
               <label className="block text-sm font-medium text-gray-300 mb-2">
-                Suffix Length
+                Дължина на суфикс
               </label>
               <div className="relative">
                 <select
@@ -228,9 +228,9 @@ function App() {
                   onChange={(e) => setLength(e.target.value)}
                   className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-xl text-white appearance-none cursor-pointer hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 >
-                  <option value="1">1 character (temporary)</option>
-                  <option value="2">2 characters</option>
-                  <option value="3">3 characters</option>
+                  <option value="1">1 знак (временен)</option>
+                  <option value="2">2 знака</option>
+                  <option value="3">3 знака</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
                   <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,7 +243,7 @@ function App() {
             {/* Suffix Input with Search Button */}
             <div className="flex-1 w-full">
               <label className="block text-sm font-medium text-gray-300 mb-2">
-                Suffix Pattern
+                Търсен суфикс
               </label>
               <div className="relative">
                 <div className="flex">
@@ -266,7 +266,7 @@ function App() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                    <span>Search</span>
+                    <span>Търсене</span>
                   </button>
                 </div>
               </div>
@@ -350,8 +350,8 @@ function App() {
                 <svg className="w-16 h-16 mx-auto text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                <p className="text-gray-400 text-lg">Start by entering a suffix pattern</p>
-                <p className="text-gray-500 text-sm mt-1">Available callsigns will appear here</p>
+                <p className="text-gray-400 text-lg">Въведете суфикс, за да започнете</p>
+                <p className="text-gray-500 text-sm mt-1">Свободните опознавателни знаци ще се покажат тук.</p>
               </div>
             </div>
           )
@@ -359,7 +359,7 @@ function App() {
 
         {/* Footer */}
         <div className="mt-8 text-center text-gray-500 text-sm">
-          Data fetched from Bulgarian Oracle APEX system
+          Данните са извлечени от <a href="http://91.132.60.93:8080/ords/f?p=723:140" target="_blank" rel="nofollow">Комисия за регулиране на съобщенията</a>
         </div>
       </div>
     </div>
