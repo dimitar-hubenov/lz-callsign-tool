@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react'
 // Database will be loaded from public/data/callsigns.json
 let databaseSet = null
 let databaseLoaded = false
+let databaseInfo = null // { count: number, lastSync: string }
 
 function loadDatabase() {
   if (databaseLoaded) return Promise.resolve()
@@ -12,9 +13,15 @@ function loadDatabase() {
       if (!res.ok) throw new Error('Failed to load database')
       return res.json()
     })
-    .then(data => {
+    .then(response => {
+      // Extract data from wrapped format
+      const callsigns = response.data || []
       // Create a Set for O(1) lookups
-      databaseSet = new Set(data.map(row => row.callsign))
+      databaseSet = new Set(callsigns.map(row => row.callsign))
+      databaseInfo = {
+        count: response.meta?.count || callsigns.length,
+        lastSync: response.meta?.lastSync || null
+      }
       databaseLoaded = true
     })
 }
@@ -53,6 +60,18 @@ function generateSuffixes(prefix, missing, letters = null) {
   return result
 }
 
+// Format ISO date to Bulgarian format: DD.MM.YYYY HH:MM UTC
+function formatLastSync(isoString) {
+  if (!isoString) return ''
+  const date = new Date(isoString)
+  const day = date.getUTCDate().toString().padStart(2, '0')
+  const month = (date.getUTCMonth() + 1).toString().padStart(2, '0')
+  const year = date.getUTCFullYear()
+  const hours = date.getUTCHours().toString().padStart(2, '0')
+  const minutes = date.getUTCMinutes().toString().padStart(2, '0')
+  return `${day}.${month}.${year} ${hours}:${minutes} UTC`
+}
+
 function App() {
   const [region, setRegion] = useState('south')
   const [length, setLength] = useState('2')
@@ -61,11 +80,19 @@ function App() {
   const [digits, setDigits] = useState(['1', '3', '5', '7', '9'])
   const [status, setStatus] = useState('')
   const [dbStatus, setDbStatus] = useState('Зареждане на данни...')
+  const [lastSync, setLastSync] = useState(null)
+  const [recordCount, setRecordCount] = useState(null)
 
   // Load database on mount
   useEffect(() => {
     loadDatabase()
-      .then(() => setDbStatus(''))
+      .then(() => {
+        setDbStatus('')
+        if (databaseInfo) {
+          setLastSync(databaseInfo.lastSync)
+          setRecordCount(databaseInfo.count)
+        }
+      })
       .catch(err => {
         console.error('Грешка при зареждане на данни:', err)
         setDbStatus('Грешка при зареждането на данни')
@@ -358,8 +385,23 @@ function App() {
         )}
 
         {/* Footer */}
-        <div className="mt-8 text-center text-gray-500 text-sm">
-          Данните са извлечени от <a href="http://91.132.60.93:8080/ords/f?p=723:140" target="_blank" rel="nofollow">Комисия за регулиране на съобщенията</a>
+        <div className="mt-8 text-center text-sm">
+          <p className="text-gray-500">
+            Данните са извлечени от{' '}
+            <a
+              href="http://91.132.60.93:8080/ords/f?p=723:140"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="text-blue-400 font-semibold hover:text-blue-300 transition-colors underline decoration-blue-700/50 hover:decoration-blue-500/50"
+            >
+              Комисия за регулиране на съобщенията
+            </a>
+          </p>
+          {lastSync && (
+            <p className="text-gray-600 text-xs mt-2">
+              Обновени: {formatLastSync(lastSync)}{recordCount && ` (${recordCount.toLocaleString()} записи)`}
+            </p>
+          )}
         </div>
       </div>
     </div>

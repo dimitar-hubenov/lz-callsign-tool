@@ -231,9 +231,9 @@ function normalizeData(rows) {
 }
 
 // ==============================
-// STEP 5: Save to JSON
+// STEP 5: Save to JSON (with metadata)
 // ==============================
-async function saveToJson(data) {
+async function saveToJson(data, lastSync) {
   if (data.length === 0) {
     throw new Error('No data to save')
   }
@@ -241,8 +241,17 @@ async function saveToJson(data) {
   // Ensure public/data directory exists
   await mkdir(DATA_DIR, { recursive: true })
 
+  // Wrap data with metadata
+  const output = {
+    meta: {
+      lastSync: lastSync.toISOString(),
+      count: data.length
+    },
+    data: data
+  }
+
   // Write JSON file with pretty formatting
-  await writeFile(OUTPUT_FILE, JSON.stringify(data, null, 2), 'utf-8')
+  await writeFile(OUTPUT_FILE, JSON.stringify(output, null, 2), 'utf-8')
 
   console.log(`Saved ${data.length} callsigns to ${OUTPUT_FILE}`)
 }
@@ -260,7 +269,7 @@ async function main() {
     console.log(`Parsed ${rows.length} rows`)
 
     const normalized = normalizeData(rows)
-    await saveToJson(normalized)
+    await saveToJson(normalized, new Date())
 
     console.log('Sync complete!')
     process.exit(0)
