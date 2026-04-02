@@ -3,18 +3,25 @@ import { useState, useEffect, useCallback } from 'react'
 // Database will be loaded from public/data/callsigns.json
 let databaseSet = null
 let databaseLoaded = false
+let databaseInfo = null // { count: number, lastSync: string }
 
 function loadDatabase() {
   if (databaseLoaded) return Promise.resolve()
 
-  return fetch('/data/callsigns.json')
+  return fetch(`${import.meta.env.BASE_URL}data/callsigns.json`)
     .then(res => {
       if (!res.ok) throw new Error('Failed to load database')
       return res.json()
     })
-    .then(data => {
+    .then(response => {
+      // Extract data from wrapped format
+      const callsigns = response.data || []
       // Create a Set for O(1) lookups
-      databaseSet = new Set(data.map(row => row.callsign))
+      databaseSet = new Set(callsigns.map(row => row.callsign))
+      databaseInfo = {
+        count: response.meta?.count || callsigns.length,
+        lastSync: response.meta?.lastSync || null
+      }
       databaseLoaded = true
     })
 }
@@ -53,6 +60,18 @@ function generateSuffixes(prefix, missing, letters = null) {
   return result
 }
 
+// Format ISO date to Bulgarian format: DD.MM.YYYY HH:MM UTC
+function formatLastSync(isoString) {
+  if (!isoString) return ''
+  const date = new Date(isoString)
+  const day = date.getUTCDate().toString().padStart(2, '0')
+  const month = (date.getUTCMonth() + 1).toString().padStart(2, '0')
+  const year = date.getUTCFullYear()
+  const hours = date.getUTCHours().toString().padStart(2, '0')
+  const minutes = date.getUTCMinutes().toString().padStart(2, '0')
+  return `${day}.${month}.${year} ${hours}:${minutes} UTC`
+}
+
 function App() {
   const [region, setRegion] = useState('south')
   const [length, setLength] = useState('2')
@@ -61,11 +80,20 @@ function App() {
   const [digits, setDigits] = useState(['1', '3', '5', '7', '9'])
   const [status, setStatus] = useState('')
   const [dbStatus, setDbStatus] = useState('Зареждане на данни...')
+  const [lastSync, setLastSync] = useState(null)
+  const [recordCount, setRecordCount] = useState(null)
+  const [hasInteracted, setHasInteracted] = useState(false)
 
   // Load database on mount
   useEffect(() => {
     loadDatabase()
-      .then(() => setDbStatus(''))
+      .then(() => {
+        setDbStatus('')
+        if (databaseInfo) {
+          setLastSync(databaseInfo.lastSync)
+          setRecordCount(databaseInfo.count)
+        }
+      })
       .catch(err => {
         console.error('Грешка при зареждане на данни:', err)
         setDbStatus('Грешка при зареждането на данни')
@@ -83,12 +111,7 @@ function App() {
       return
     }
 
-    if (!suffix) {
-      setResults([])
-      setStatus('')
-      return
-    }
-
+    // If suffix is empty, we'll search for ALL possible combinations
     setStatus('Търсене...')
 
     // Use setTimeout to allow UI to update
@@ -128,16 +151,18 @@ function App() {
     }, 0)
   }, [suffix, length, region])
 
-  // Debounced search
+  // Debounced search (only after user interaction)
   useEffect(() => {
+    if (!hasInteracted) return
     const timer = setTimeout(runSearch, 300)
     return () => clearTimeout(timer)
-  }, [suffix, length, region, runSearch])
+  }, [suffix, length, region, hasInteracted, runSearch])
 
   // Handle Enter key on suffix input
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault()
+      if (!hasInteracted) setHasInteracted(true)
       runSearch()
     }
   }
@@ -148,7 +173,7 @@ function App() {
 
       const span = element.querySelector('span')
       const original = span.textContent
-      span.innerHTML = '<i className="bi bi-clipboard2-check"></i>'
+      span.innerHTML = '<i class="bi bi-clipboard2-check"></i>'
 
       setTimeout(() => {
         span.textContent = original
@@ -173,6 +198,9 @@ function App() {
     const maxLen = parseInt(length)
     value = value.substring(0, maxLen)
     setSuffix(value)
+    if (!hasInteracted) {
+      setHasInteracted(true)
+    }
   }
 
   if (dbStatus) {
@@ -189,7 +217,7 @@ function App() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">LZ Callsign Tool</h1>
-          <p className="text-gray-400">Bulgarian Amateur Radio Callsign Availability Checker</p>
+          <p className="text-gray-400">Проверка за свободни опознавателни знаци</p>
         </div>
 
         {/* Controls Card */}
@@ -203,7 +231,10 @@ function App() {
               <div className="relative">
                 <select
                   value={region}
-                  onChange={(e) => setRegion(e.target.value)}
+                  onChange={(e) => {
+                    setRegion(e.target.value)
+                    if (!hasInteracted) setHasInteracted(true)
+                  }}
                   className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-xl text-white appearance-none cursor-pointer hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 >
                   <option value="south">Южна България (1,3,5,7,9)</option>
@@ -225,7 +256,10 @@ function App() {
               <div className="relative">
                 <select
                   value={length}
-                  onChange={(e) => setLength(e.target.value)}
+                  onChange={(e) => {
+                    setLength(e.target.value)
+                    if (!hasInteracted) setHasInteracted(true)
+                  }}
                   className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-xl text-white appearance-none cursor-pointer hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 >
                   <option value="1">1 знак (временен)</option>
@@ -259,9 +293,12 @@ function App() {
                     autoComplete="off"
                   />
                   <button
-                    className="px-6 py-3 bg-blue-600 hover:bg-blue-700 border border-l-0 border-gray-600 rounded-r-xl text-white font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 flex items-center gap-2"
+                    className="px-6 py-3 bg-blue-600 hover:bg-blue-700 border border-l-0 border-gray-600 rounded-xl text-white font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 flex items-center gap-2"
                     type="button"
-                    onClick={runSearch}
+                    onClick={() => {
+                      if (!hasInteracted) setHasInteracted(true)
+                      runSearch()
+                    }}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -358,8 +395,23 @@ function App() {
         )}
 
         {/* Footer */}
-        <div className="mt-8 text-center text-gray-500 text-sm">
-          Данните са извлечени от <a href="http://91.132.60.93:8080/ords/f?p=723:140" target="_blank" rel="nofollow">Комисия за регулиране на съобщенията</a>
+        <div className="mt-8 text-center text-sm">
+          <p className="text-gray-500">
+            Данните са извлечени от{' '}
+            <a
+              href="http://91.132.60.93:8080/ords/f?p=723:140"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="text-blue-400 font-semibold hover:text-blue-300 transition-colors underline decoration-blue-700/50 hover:decoration-blue-500/50"
+            >
+              Комисия за регулиране на съобщенията
+            </a>
+          </p>
+          {lastSync && (
+            <p className="text-gray-600 text-xs mt-2">
+              Обновени: {formatLastSync(lastSync)}{recordCount && ` (${recordCount.toLocaleString()} записи)`}
+            </p>
+          )}
         </div>
       </div>
     </div>
