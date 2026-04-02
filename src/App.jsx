@@ -7,7 +7,7 @@ let databaseLoaded = false
 function loadDatabase() {
   if (databaseLoaded) return Promise.resolve()
 
-  return fetch('/data/callsigns.json')
+  return fetch(`${import.meta.env.BASE_URL}data/callsigns.json`)
     .then(res => {
       if (!res.ok) throw new Error('Failed to load database')
       return res.json()
