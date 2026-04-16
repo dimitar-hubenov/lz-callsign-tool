@@ -6,6 +6,7 @@ dist/
 
 # Data files (generated)
 public/data/callsigns.json
+public/data/callsigns-diff.json
 
 # IDE
 .vscode/
