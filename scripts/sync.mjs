@@ -275,39 +275,44 @@ async function main() {
     previousData = [];
   }
 
-  // Load existing diff if possible, try to repair if corrupted
+  // Load existing diff if possible, handling missing or corrupted file gracefully
   let diffArray = [];
   try {
     const diffRaw = await readFile(diffPath, 'utf8');
     diffArray = JSON.parse(diffRaw);
     if (!Array.isArray(diffArray)) throw new Error('diff.json not an array');
   } catch (e) {
-    console.warn('Diff file missing or corrupted – attempting repair');
-    // Attempt a simple repair: extract JSON array between first '[' and last ']'
-    try {
-      const raw = await readFile(diffPath, 'utf8');
-      const start = raw.indexOf('[');
-      const end = raw.lastIndexOf(']');
-      if (start !== -1 && end !== -1 && end > start) {
-        const candidate = raw.substring(start, end + 1);
-        diffArray = JSON.parse(candidate);
-        console.log('Diff file repaired successfully');
-      } else {
-        throw new Error('No recognizable array in diff file');
-      }
-    } catch (repairErr) {
-      // If repair fails, archive the corrupted file
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const backupPath = resolve(DATA_DIR, `callsigns-diff-${timestamp}.json`);
-      try {
-        await writeFile(backupPath, await readFile(diffPath, 'utf8'));
-        console.warn(`Corrupted diff backed up to ${backupPath}`);
-      } catch (_) {}
-      // Start with a clean diff array for this run
+    if (e.code === 'ENOENT') {
+      // Diff file does not exist – start with an empty diff array
+      console.warn('Diff file not found – starting with empty diff');
       diffArray = [];
+    } else {
+      console.warn('Diff file is corrupted – attempting repair');
+      // Attempt a simple repair: extract JSON array between first '[' and last ']'
+      try {
+        const raw = await readFile(diffPath, 'utf8');
+        const start = raw.indexOf('[');
+        const end = raw.lastIndexOf(']');
+        if (start !== -1 && end !== -1 && end > start) {
+          const candidate = raw.substring(start, end + 1);
+          diffArray = JSON.parse(candidate);
+          console.log('Diff file repaired successfully');
+        } else {
+          throw new Error('No recognizable array in diff file');
+        }
+      } catch (repairErr) {
+        // If repair fails, archive the corrupted file
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const backupPath = resolve(DATA_DIR, `callsigns-diff-${timestamp}.json`);
+        try {
+          await writeFile(backupPath, await readFile(diffPath, 'utf8'));
+          console.warn(`Corrupted diff backed up to ${backupPath}`);
+        } catch (_) {}
+        // Start with a clean diff array for this run
+        diffArray = [];
+      }
     }
-    // If we could not repair, we will write a fresh diff file later
-    // Regardless, we consider diff usable (empty or repaired)
+    // Diff array is now either empty or repaired
   }
 
   try {
