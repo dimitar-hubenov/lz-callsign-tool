@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSync": "2026-04-16T11:14:56.510Z",
-    "count": 8105
+    "lastSync": "2026-04-18T13:51:54.626Z",
+    "count": 8106
   },
   "data": [
     {
@@ -213,22 +213,6 @@
       "address": "ул.\"Цар  Борис І\" №2, п.к.6100 гр.Казанлък, Община: Казанлък, Област:Стара Загора"
     },
     {
-      "callsign": "LZ1KTR",
-      "type": "Клубен",
-      "class": "",
-      "responsible": "LZ3ZZ",
-      "club_name": "\"ТРАКИЙСКА РОЗА\"",
-      "address": "ул. \"Станьо Гъдев\" № 5, п.к.6100 гр.Казанлък, Община: Казанлък, Област:Стара Загора"
-    },
-    {
-      "callsign": "LZ5W",
-      "type": "Временен",
-      "class": "",
-      "responsible": "",
-      "club_name": "\"ТРАКИЙСКА РОЗА\"",
-      "address": "ул. \"Станьо Гъдев\" № 5, п.к.6100 гр.Казанлък, Община: Казанлък, Област:Стара Загора"
-    },
-    {
       "callsign": "LZ4KAC",
       "type": "Клубен",
       "class": "",
@@ -307,6 +291,22 @@
       "responsible": "LZ4TW",
       "club_name": "ИНЖ. ЦВЕТАН ЛАЗАРОВ 2023",
       "address": "ул. \"Последна\" № 4, п.к.5520 с.Лесидрен, Община: Угърчин, Област:Ловеч"
+    },
+    {
+      "callsign": "LZ1KTR",
+      "type": "Клубен",
+      "class": "",
+      "responsible": "LZ3ZZ",
+      "club_name": "КЛУБ \"ТРАКИЙСКА РОЗА\"",
+      "address": "ул. \"Христо Ботев\" № 49, п.к.6137 с.Копринка, Община: Казанлък, Област:Стара Загора"
+    },
+    {
+      "callsign": "LZ5W",
+      "type": "Временен",
+      "class": "",
+      "responsible": "",
+      "club_name": "КЛУБ \"ТРАКИЙСКА РОЗА\"",
+      "address": "ул. \"Христо Ботев\" № 49, п.к.6137 с.Копринка, Община: Казанлък, Област:Стара Загора"
     },
     {
       "callsign": "LZ2KRM",
@@ -2118,6 +2118,14 @@
     },
     {
       "callsign": "LZ0FZ",
+      "type": "Временен",
+      "class": "",
+      "responsible": "",
+      "club_name": "БЪЛГАРСКА ФЕДЕРАЦИЯ НА РАДИОЛЮБИТЕЛИТЕ - БФРЛ",
+      "address": "ж.к. \"Лагера\", бл. 5, офис 1\n , п.к.1612 гр.София, Община: Столична, Област:София-град"
+    },
+    {
+      "callsign": "LZ100LZ",
       "type": "Временен",
       "class": "",
       "responsible": "",
@@ -11453,14 +11461,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1MGI",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1IKM",
       "type": "Личен",
       "class": "2",
@@ -17006,14 +17006,6 @@
     },
     {
       "callsign": "LZ1BH",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1SPR",
       "type": "Личен",
       "class": "1",
       "responsible": "",
@@ -24261,14 +24253,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ3FF",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1DCF",
       "type": "Личен",
       "class": "1",
@@ -24680,14 +24664,6 @@
       "callsign": "LZ3BX",
       "type": "Личен",
       "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1SYP",
-      "type": "Личен",
-      "class": "2",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -28381,14 +28357,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1TP",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1DDZ",
       "type": "Личен",
       "class": "1",
@@ -28486,14 +28454,6 @@
     },
     {
       "callsign": "LZ3DE",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ3YW",
       "type": "Личен",
       "class": "1",
       "responsible": "",
@@ -29005,30 +28965,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1CPM",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ5WC",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ5AK",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1ADF",
       "type": "Личен",
       "class": "1",
@@ -29142,14 +29078,6 @@
     },
     {
       "callsign": "LZ5YM",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ3NO",
       "type": "Личен",
       "class": "1",
       "responsible": "",
@@ -35933,14 +35861,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ2GY",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ2YHB",
       "type": "Личен",
       "class": "2",
@@ -39030,14 +38950,6 @@
     },
     {
       "callsign": "LZ1DKC",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1ARP",
       "type": "Личен",
       "class": "2",
       "responsible": "",
@@ -44773,22 +44685,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ2SX",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ0M",
-      "type": "Временен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1AKS",
       "type": "Личен",
       "class": "2",
@@ -49485,22 +49381,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1CRI",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1W",
-      "type": "Временен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ5BU",
       "type": "Личен",
       "class": "1",
@@ -50877,14 +50757,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1VSV",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1CLK",
       "type": "Личен",
       "class": "1",
@@ -50926,6 +50798,14 @@
     },
     {
       "callsign": "LZ1RJM",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1VSV",
       "type": "Личен",
       "class": "1",
       "responsible": "",
@@ -51256,14 +51136,6 @@
       "callsign": "LZ1NMT",
       "type": "Личен",
       "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1TUR",
-      "type": "Личен",
-      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -60597,22 +60469,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1YE",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ5Y",
-      "type": "Временен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ2QI",
       "type": "Личен",
       "class": "1",
@@ -64013,15 +63869,7 @@
       "address": ""
     },
     {
-      "callsign": "LZ1VSK",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1ALX",
+      "callsign": "LZ7AT",
       "type": "Личен",
       "class": "1",
       "responsible": "",
@@ -64429,7 +64277,23 @@
       "address": ""
     },
     {
-      "callsign": "LZ1TPL",
+      "callsign": "LZ7KY",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ5AK",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1SYP",
       "type": "Личен",
       "class": "2",
       "responsible": "",
@@ -64477,6 +64341,94 @@
       "address": ""
     },
     {
+      "callsign": "LZ2GY",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1YE",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ5Y",
+      "type": "Временен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ3FF",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1CRI",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1W",
+      "type": "Временен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ3YW",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1TP",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ3NO",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1SPR",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1TPL",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
       "callsign": "LZ3WC",
       "type": "Личен",
       "class": "1",
@@ -64509,6 +64461,46 @@
       "address": ""
     },
     {
+      "callsign": "LZ2SX",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ0M",
+      "type": "Временен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1ARP",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1CPM",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ5WC",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
       "callsign": "LZ7BB",
       "type": "Личен",
       "class": "1",
@@ -64520,6 +64512,22 @@
       "callsign": "LZ1BLU",
       "type": "Личен",
       "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1MGI",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1TUR",
+      "type": "Личен",
+      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
