@@ -7,6 +7,15 @@ import { readFile, writeFile, mkdir } from 'fs/promises'
 import { resolve } from 'path'
 import * as cheerio from 'cheerio'
 
+// ==============================
+// CONFIG
+// ==============================
+const BASE_URL = 'http://91.132.60.93:8080/ords/f?p=723:140'
+const DATA_DIR = resolve(process.cwd(), 'public/data')
+const COOKIES_FILE = resolve(process.cwd(), 'data/cookies.txt')
+const OUTPUT_FILE = resolve(DATA_DIR, 'callsigns.json')
+const DIFF_FILE = resolve(DATA_DIR, 'callsigns-diff.json');
+
 // Simple cookie jar implementation
 class CookieJar {
   constructor() {
@@ -44,14 +53,6 @@ class CookieJar {
     return cookies.join('; ')
   }
 }
-
-// ==============================
-// CONFIG
-// ==============================
-const BASE_URL = 'http://91.132.60.93:8080/ords/f?p=723:140'
-const DATA_DIR = resolve(process.cwd(), 'public/data')
-const OUTPUT_FILE = resolve(DATA_DIR, 'callsigns.json')
-const COOKIES_FILE = resolve(process.cwd(), 'data/cookies.txt')
 
 // ==============================
 // HELPER: HTTP Request (with redirect support and cookies)
@@ -261,8 +262,8 @@ async function saveToJson(data, lastSync) {
 // ==============================
 async function main() {
   const cookieJar = new CookieJar();
-  const diffPath = resolve(DATA_DIR, 'callsigns-diff.json');
   let previousData = [];
+  let diffArray = [];
   let skipDiff = false;
 
   // Load previous callsigns snapshot if exists
@@ -273,49 +274,22 @@ async function main() {
   } catch (e) {
     // No previous file - start fresh
     previousData = [];
+    skipDiff = true;
   }
 
-  // Load existing diff if possible, handling missing or corrupted file gracefully
-  let diffArray = [];
+  // Load previous diff if exists
   try {
-    const diffRaw = await readFile(diffPath, 'utf8');
-    diffArray = JSON.parse(diffRaw);
-    if (!Array.isArray(diffArray)) throw new Error('diff.json not an array');
+    const prevRawDiff = await readFile(DIFF_FILE, 'utf8');
+    const prevJsonDiff = JSON.parse(prevRawDiff);
+    diffArray = prevJsonDiff.data || [];
   } catch (e) {
-    if (e.code === 'ENOENT') {
-      // Diff file does not exist – start with an empty diff array
-      console.warn('Diff file not found – starting with empty diff');
-      diffArray = [];
-    } else {
-      console.warn('Diff file is corrupted – attempting repair');
-      // Attempt a simple repair: extract JSON array between first '[' and last ']'
-      try {
-        const raw = await readFile(diffPath, 'utf8');
-        const start = raw.indexOf('[');
-        const end = raw.lastIndexOf(']');
-        if (start !== -1 && end !== -1 && end > start) {
-          const candidate = raw.substring(start, end + 1);
-          diffArray = JSON.parse(candidate);
-          console.log('Diff file repaired successfully');
-        } else {
-          throw new Error('No recognizable array in diff file');
-        }
-      } catch (repairErr) {
-        // If repair fails, archive the corrupted file
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const backupPath = resolve(DATA_DIR, `callsigns-diff-${timestamp}.json`);
-        try {
-          await writeFile(backupPath, await readFile(diffPath, 'utf8'));
-          console.warn(`Corrupted diff backed up to ${backupPath}`);
-        } catch (_) {}
-        // Start with a clean diff array for this run
-        diffArray = [];
-      }
-    }
-    // Diff array is now either empty or repaired
+    // No previous file - start fresh
+    diffArray = [];
   }
 
   try {
+    await mkdir(DATA_DIR, { recursive: true });
+
     const sessionId = await getSessionId(cookieJar);
     const html = await downloadExport(sessionId, cookieJar);
     const rows = parseTable(html);
@@ -323,33 +297,39 @@ async function main() {
 
     const normalized = normalizeData(rows);
 
-    // Compute diff between previousData and normalized
-    const prevMap = new Map(previousData.map(r => [r.callsign, r]));
-    const newMap = new Map(normalized.map(r => [r.callsign, r]));
-    const now = new Date().toISOString();
     const changes = [];
-    // Added
-    for (const [cs, rec] of newMap) {
-      if (!prevMap.has(cs)) {
-        changes.push({ callsign: cs, type: 'added', timestamp: now, record: rec });
+    if (skipDiff) {
+      await writeFile(DIFF_FILE, JSON.stringify(diffArray, null, 2), 'utf-8');
+      console.log(`Creating a callsigns snapshot for the first time. An empty diff file was created.`);
+    } else {
+      // Compute diff between previousData and normalized
+      const now = new Date().toISOString();
+      const prevMap = new Map(previousData.map(r => [r.callsign, r]));
+      const newMap = new Map(normalized.map(r => [r.callsign, r]));
+      
+      // Added
+      for (const [cs, rec] of newMap) {
+        if (!prevMap.has(cs)) {
+          changes.push({ callsign: cs, type: 'added', timestamp: now, record: rec });
+        }
       }
-    }
-    // Removed
-    for (const [cs, rec] of prevMap) {
-      if (!newMap.has(cs)) {
-        changes.push({ callsign: cs, type: 'removed', timestamp: now, record: rec });
-      }
-    }
-    // Compute counts
-    const addedCount = changes.filter(c => c.type === 'added').length;
-    const removedCount = changes.filter(c => c.type === 'removed').length;
+      const addedCount = changes.filter(c => c.type === 'added').length;
 
-    // Update diff file (always write, even if no changes, to ensure a clean file)
-    if (changes.length > 0) {
-      diffArray.push(...changes);
+      // Removed
+      for (const [cs, rec] of prevMap) {
+        if (!newMap.has(cs)) {
+          changes.push({ callsign: cs, type: 'removed', timestamp: now, record: rec });
+        }
+      }
+      const removedCount = changes.filter(c => c.type === 'removed').length;
+
+      if (changes.length > 0) {
+        diffArray.push(...changes);
+      }
+
+      await writeFile(DIFF_FILE, JSON.stringify(diffArray, null, 2), 'utf-8');
+      console.log(`Diff file written this sync run: ${addedCount} added, ${removedCount} removed`);
     }
-    await writeFile(diffPath, JSON.stringify(diffArray, null, 2), 'utf-8');
-    console.log(`Diff file written this sync run: ${addedCount} added, ${removedCount} removed`);
 
     await saveToJson(normalized, new Date());
     console.log('Sync complete!');
