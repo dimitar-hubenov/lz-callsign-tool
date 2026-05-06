@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-05-05T05:16:47.724Z",
+    "lastSync": "2026-05-06T05:30:45.583Z",
     "count": 8108
   },
   "data": [
@@ -13942,14 +13942,6 @@
     },
     {
       "callsign": "LZ1HIC",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1YDA",
       "type": "Личен",
       "class": "2",
       "responsible": "",
@@ -44461,14 +44453,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1SRT",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ3EM",
       "type": "Личен",
       "class": "1",
@@ -63029,14 +63013,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1MTC",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ3BIM",
       "type": "Личен",
       "class": "2",
@@ -64413,14 +64389,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1SPY",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ5JM",
       "type": "Личен",
       "class": "1",
@@ -64488,6 +64456,38 @@
       "callsign": "LZ3YF",
       "type": "Личен",
       "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1MTC",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1SRT",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1SPY",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1YDA",
+      "type": "Личен",
+      "class": "2",
       "responsible": "",
       "club_name": "",
       "address": ""
