@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 
 // Database will be loaded from public/data/callsigns.json
-let databaseSet = null
+let databaseMap = null // Map<callsign, record>
 let databaseLoaded = false
 let databaseInfo = null // { count: number, lastSync: string }
 
@@ -17,8 +17,8 @@ function loadDatabase() {
     .then(response => {
       // Extract data from wrapped format
       const callsigns = response.data || []
-      // Create a Set for O(1) lookups
-      databaseSet = new Set(callsigns.map(row => row.callsign))
+      // Create a Map for O(1) lookups with full record data
+      databaseMap = new Map(callsigns.map(row => [row.callsign, row]))
       databaseInfo = {
         count: response.meta?.count || callsigns.length,
         lastSync: response.meta?.lastSync || null
@@ -134,7 +134,7 @@ function MainPage() {
 
         for (const d of currentDigits) {
           const cs = `LZ${d}${sfx}`
-          if (!databaseSet.has(cs)) {
+          if (!databaseMap.has(cs)) {
             freeDigits.push(d)
           }
         }
@@ -167,6 +167,7 @@ function MainPage() {
       runSearch()
     }
   }
+
 
   const copyCallsign = async (callsign, element) => {
     try {
@@ -361,9 +362,19 @@ function MainPage() {
                           </td>
                         )
                       } else {
+                        const record = databaseMap.get(cs)
                         return (
-                          <td key={d} className="px-1 py-1">
-                            <div className="h-9 bg-red-900/20 border border-red-900/30 rounded-md"></div>
+                          <td key={d} className="relative px-1 py-1">
+                            <div className="flex items-center justify-center text-gray-500/50" title={[
+                              cs,
+                              record.type && `Type: ${record.type}`,
+                              record.class && `Class: ${record.class}`,
+                              record.responsible && `Responsible: ${record.responsible}`,
+                              record.club_name && `Club: ${record.club_name}`,
+                              record.address && `Address: ${record.address}`
+                            ].filter(Boolean).join('\n')}>
+                              {cs}
+                            </div>
                           </td>
                         )
                       }
