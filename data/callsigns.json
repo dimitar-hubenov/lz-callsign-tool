@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-05-20T06:09:29.474Z",
+    "lastSync": "2026-05-21T06:11:34.460Z",
     "count": 8129
   },
   "data": [
@@ -22709,14 +22709,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1GOP",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ2DHK",
       "type": "Личен",
       "class": "1",
@@ -29006,14 +28998,6 @@
     },
     {
       "callsign": "LZ2LAX",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1HGD",
       "type": "Личен",
       "class": "2",
       "responsible": "",
@@ -60061,14 +60045,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ2QI",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1YF",
       "type": "Личен",
       "class": "1",
@@ -63117,14 +63093,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1HH",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1GKP",
       "type": "Личен",
       "class": "2",
@@ -65029,7 +64997,39 @@
       "address": ""
     },
     {
+      "callsign": "LZ2QI",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1HH",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1HGD",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
       "callsign": "LZ5LJ",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1GOP",
       "type": "Личен",
       "class": "1",
       "responsible": "",
