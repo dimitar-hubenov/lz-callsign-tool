@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-06-22T07:25:45.695Z",
+    "lastSync": "2026-06-23T06:08:17.799Z",
     "count": 8213
   },
   "data": [
@@ -4925,14 +4925,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1NUD",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1NII",
       "type": "Личен",
       "class": "1",
@@ -5589,14 +5581,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ2TE",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1SGG",
       "type": "Личен",
       "class": "2",
@@ -5662,14 +5646,6 @@
     },
     {
       "callsign": "LZ1GGN",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1PPG",
       "type": "Личен",
       "class": "2",
       "responsible": "",
@@ -20117,14 +20093,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ4UB",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ2BTW",
       "type": "Личен",
       "class": "1",
@@ -20576,14 +20544,6 @@
       "callsign": "LZ1EML",
       "type": "Личен",
       "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ4UG",
-      "type": "Личен",
-      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -47693,30 +47653,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ4AE",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ0FAR",
-      "type": "Радиофар",
-      "class": "1",
-      "responsible": "LZ4AE",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ2K",
-      "type": "Временен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ3VM",
       "type": "Личен",
       "class": "1",
@@ -48030,14 +47966,6 @@
     },
     {
       "callsign": "LZ2YO",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ2DAB",
       "type": "Личен",
       "class": "1",
       "responsible": "",
@@ -65550,6 +65478,78 @@
     },
     {
       "callsign": "LZ7DJ",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1PPG",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2TE",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ4UG",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ4AE",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ0FAR",
+      "type": "Радиофар",
+      "class": "1",
+      "responsible": "LZ4AE",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2K",
+      "type": "Временен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ4UB",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2DAB",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1NUD",
       "type": "Личен",
       "class": "1",
       "responsible": "",
