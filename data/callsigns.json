@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSync": "2026-06-30T06:13:46.089Z",
-    "count": 8213
+    "lastSync": "2026-07-01T06:28:10.296Z",
+    "count": 8214
   },
   "data": [
     {
@@ -721,6 +721,14 @@
       "type": "Клубен",
       "class": "",
       "responsible": "LZ1CLA",
+      "club_name": "РАДИОКЛУБ КЪМ \"ВИРИДИУМ\"",
+      "address": "бул. \"Петко Каравелов\", бл. 77, вх. Б, ет. 10, ап. 60, п.к.1408 гр.София, Община: Столична, Област:София-град"
+    },
+    {
+      "callsign": "LZ3X",
+      "type": "Временен",
+      "class": "",
+      "responsible": "",
       "club_name": "РАДИОКЛУБ КЪМ \"ВИРИДИУМ\"",
       "address": "бул. \"Петко Каравелов\", бл. 77, вх. Б, ет. 10, ап. 60, п.к.1408 гр.София, Община: Столична, Област:София-град"
     },
@@ -64397,6 +64405,30 @@
       "address": ""
     },
     {
+      "callsign": "LZ0DDF",
+      "type": "Ретранслатор",
+      "class": "1",
+      "responsible": "LZ7DJ",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ7DJ",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2NTN",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
       "callsign": "LZ2ALI",
       "type": "Личен",
       "class": "2",
@@ -64837,14 +64869,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ2NTN",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1PBC",
       "type": "Личен",
       "class": "2",
@@ -64894,22 +64918,6 @@
     },
     {
       "callsign": "LZ1WZM",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ0DDF",
-      "type": "Ретранслатор",
-      "class": "1",
-      "responsible": "LZ7DJ",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ7DJ",
       "type": "Личен",
       "class": "1",
       "responsible": "",
