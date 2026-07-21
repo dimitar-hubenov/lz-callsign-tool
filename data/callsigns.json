@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-07-20T05:41:01.645Z",
+    "lastSync": "2026-07-21T05:21:44.027Z",
     "count": 8215
   },
   "data": [
@@ -18200,14 +18200,6 @@
       "callsign": "LZ1ITT",
       "type": "Личен",
       "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ2KC",
-      "type": "Личен",
-      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -64446,6 +64438,14 @@
     },
     {
       "callsign": "LZ1WEL",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2KC",
       "type": "Личен",
       "class": "1",
       "responsible": "",
