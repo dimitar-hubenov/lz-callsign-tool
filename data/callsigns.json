@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-08-21T03:03:05.514Z",
+    "lastSync": "2026-08-22T02:54:04.250Z",
     "count": 8216
   },
   "data": [
@@ -56573,38 +56573,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ5VZ",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ0SEA",
-      "type": "Ретранслатор",
-      "class": "1",
-      "responsible": "LZ5VZ",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ0BGY",
-      "type": "Ретранслатор",
-      "class": "1",
-      "responsible": "LZ5VZ",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ0IAR",
-      "type": "Ретранслатор",
-      "class": "1",
-      "responsible": "LZ5VZ",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1MDC",
       "type": "Личен",
       "class": "2",
@@ -64497,6 +64465,38 @@
       "type": "Личен",
       "class": "1",
       "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ0SEA",
+      "type": "Ретранслатор",
+      "class": "1",
+      "responsible": "LZ5VZ",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ0BGY",
+      "type": "Ретранслатор",
+      "class": "1",
+      "responsible": "LZ5VZ",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ5VZ",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ0IAR",
+      "type": "Ретранслатор",
+      "class": "1",
+      "responsible": "LZ5VZ",
       "club_name": "",
       "address": ""
     },
