@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSync": "2026-08-25T02:58:55.720Z",
-    "count": 8216
+    "lastSync": "2026-08-26T03:05:04.114Z",
+    "count": 8215
   },
   "data": [
     {
@@ -21672,14 +21672,6 @@
       "callsign": "LZ1JPR",
       "type": "Личен",
       "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1ROM",
-      "type": "Личен",
-      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
