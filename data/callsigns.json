@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-09-02T06:52:35.304Z",
+    "lastSync": "2026-09-03T06:56:05.876Z",
     "count": 8216
   },
   "data": [
@@ -65517,14 +65517,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ2MI",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ2PWK",
       "type": "Личен",
       "class": "2",
@@ -65574,6 +65566,14 @@
     },
     {
       "callsign": "LZ5GB",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2MI",
       "type": "Личен",
       "class": "1",
       "responsible": "",
