@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSync": "2026-09-04T07:06:56.790Z",
-    "count": 8216
+    "lastSync": "2026-09-05T06:44:37.971Z",
+    "count": 8215
   },
   "data": [
     {
@@ -14525,14 +14525,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1ABE",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1DZZ",
       "type": "Личен",
       "class": "1",
@@ -22328,14 +22320,6 @@
       "callsign": "LZ1VDM",
       "type": "Личен",
       "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ4MD",
-      "type": "Личен",
-      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -54093,22 +54077,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1AAW",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ0A",
-      "type": "Временен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1AAM",
       "type": "Личен",
       "class": "1",
@@ -64462,6 +64430,30 @@
     },
     {
       "callsign": "LZ1ZU",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1AAW",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1ABE",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ4MD",
       "type": "Личен",
       "class": "1",
       "responsible": "",
