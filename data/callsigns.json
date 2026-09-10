@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-09-09T07:08:15.478Z",
+    "lastSync": "2026-09-10T07:04:22.255Z",
     "count": 8215
   },
   "data": [
@@ -2944,14 +2944,6 @@
       "callsign": "LZ1AOR",
       "type": "Личен",
       "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ2APK",
-      "type": "Личен",
-      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -25973,14 +25965,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ4NH",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1CHS",
       "type": "Личен",
       "class": "1",
@@ -31144,14 +31128,6 @@
       "callsign": "LZ2VII",
       "type": "Личен",
       "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ2NHI",
-      "type": "Личен",
-      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -49349,14 +49325,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ3DX",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ2IJ",
       "type": "Личен",
       "class": "1",
@@ -65278,6 +65246,38 @@
     },
     {
       "callsign": "LZ1ROM",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ3DX",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2APK",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ4NH",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2NHI",
       "type": "Личен",
       "class": "1",
       "responsible": "",
