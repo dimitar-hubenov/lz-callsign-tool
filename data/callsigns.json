@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSync": "2026-09-16T07:19:58.025Z",
-    "count": 8216
+    "lastSync": "2026-09-17T07:15:50.208Z",
+    "count": 8214
   },
   "data": [
     {
@@ -2285,14 +2285,6 @@
       "address": "кв. \"Дървеница\", бул. \"Климент Охридски\" № 8, п.к.1756 гр.София, Община: Столична, Област:София-град"
     },
     {
-      "callsign": "LZ80TUS",
-      "type": "Временен",
-      "class": "",
-      "responsible": "",
-      "club_name": "ТЕХНИЧЕСКИ УНИВЕРСИТЕТ",
-      "address": "кв. \"Дървеница\", бул. \"Климент Охридски\" № 8, п.к.1756 гр.София, Община: Столична, Област:София-град"
-    },
-    {
       "callsign": "LZ1R",
       "type": "Клубен",
       "class": "",
@@ -4278,14 +4270,6 @@
     },
     {
       "callsign": "LZ1NIY",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1PHW",
       "type": "Личен",
       "class": "2",
       "responsible": "",
@@ -28645,14 +28629,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ3QZ",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1IDG",
       "type": "Личен",
       "class": "1",
@@ -44141,14 +44117,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ3BMW",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ2VBB",
       "type": "Личен",
       "class": "2",
@@ -44390,14 +44358,6 @@
     },
     {
       "callsign": "LZ3ART",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ3PVD",
       "type": "Личен",
       "class": "2",
       "responsible": "",
@@ -59421,14 +59381,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1NVH",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1INP",
       "type": "Личен",
       "class": "1",
@@ -63613,14 +63565,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1FEY",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ3ARV",
       "type": "Личен",
       "class": "2",
@@ -64200,6 +64144,14 @@
       "callsign": "LZ5XP",
       "type": "Личен",
       "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ3PVD",
+      "type": "Личен",
+      "class": "2",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -65576,6 +65528,38 @@
       "callsign": "LZ2MI",
       "type": "Личен",
       "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1FEY",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ3BMW",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ3QZ",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1PHW",
+      "type": "Личен",
+      "class": "2",
       "responsible": "",
       "club_name": "",
       "address": ""
