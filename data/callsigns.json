@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-09-21T07:42:16.213Z",
+    "lastSync": "2026-09-22T07:24:16.098Z",
     "count": 8215
   },
   "data": [
@@ -2278,6 +2278,14 @@
     },
     {
       "callsign": "LZ6O",
+      "type": "Временен",
+      "class": "",
+      "responsible": "",
+      "club_name": "ТЕХНИЧЕСКИ УНИВЕРСИТЕТ",
+      "address": "кв. \"Дървеница\", бул. \"Климент Охридски\" № 8, п.к.1756 гр.София, Община: Столична, Област:София-град"
+    },
+    {
+      "callsign": "LZ80RKVT",
       "type": "Временен",
       "class": "",
       "responsible": "",
@@ -30008,14 +30016,6 @@
       "callsign": "LZ2NKN",
       "type": "Личен",
       "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1LZ",
-      "type": "Личен",
-      "class": "1",
       "responsible": "",
       "club_name": "",
       "address": ""
@@ -64021,14 +64021,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ3MIT",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ3MTR",
       "type": "Личен",
       "class": "2",
@@ -64278,6 +64270,14 @@
     },
     {
       "callsign": "LZ1RTT",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1LZ",
       "type": "Личен",
       "class": "1",
       "responsible": "",
