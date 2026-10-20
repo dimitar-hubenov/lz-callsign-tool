@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastSync": "2026-10-19T07:23:55.609Z",
+    "lastSync": "2026-10-20T07:14:55.449Z",
     "count": 8248
   },
   "data": [
@@ -10278,14 +10278,6 @@
     },
     {
       "callsign": "LZ2HL",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ2SJ",
       "type": "Личен",
       "class": "1",
       "responsible": "",
@@ -32037,14 +32029,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1SAD",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ2SCP",
       "type": "Личен",
       "class": "2",
@@ -32718,14 +32702,6 @@
     },
     {
       "callsign": "LZ2RL",
-      "type": "Личен",
-      "class": "1",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ2PSS",
       "type": "Личен",
       "class": "1",
       "responsible": "",
@@ -64493,14 +64469,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ3BBB",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ1BYB",
       "type": "Личен",
       "class": "2",
@@ -65902,6 +65870,38 @@
     },
     {
       "callsign": "LZ1GVK",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ3BBB",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2SJ",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ2PSS",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1SAD",
       "type": "Личен",
       "class": "2",
       "responsible": "",
