@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSync": "2026-11-24T12:05:06.922Z",
-    "count": 8267
+    "lastSync": "2026-11-25T10:56:06.110Z",
+    "count": 8269
   },
   "data": [
     {
@@ -355,6 +355,14 @@
       "responsible": "",
       "club_name": "НАРОДНО ЧИТАЛИЩЕ \"РАЗВИТИЕ - 1898 Г.\"",
       "address": "ул. \"Стара планина\" № 136, п.к.5630 с.Орешак, Община: Троян, Област:Ловеч"
+    },
+    {
+      "callsign": "LZ1KSM",
+      "type": "Клубен",
+      "class": "",
+      "responsible": "LZ1YDA",
+      "club_name": "РАДИОКЛУБ САМОКОВ",
+      "address": "ул. \"Македония\" № 40, п.к.2000 гр.Самоков, Община: Самоков, Област:София"
     },
     {
       "callsign": "LZ1KFZ",
@@ -9198,14 +9206,6 @@
     },
     {
       "callsign": "LZ1WSA",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
-      "callsign": "LZ1VGV",
       "type": "Личен",
       "class": "2",
       "responsible": "",
@@ -63205,14 +63205,6 @@
       "address": ""
     },
     {
-      "callsign": "LZ1MOE",
-      "type": "Личен",
-      "class": "2",
-      "responsible": "",
-      "club_name": "",
-      "address": ""
-    },
-    {
       "callsign": "LZ3CCC",
       "type": "Личен",
       "class": "2",
@@ -65845,6 +65837,22 @@
       "address": ""
     },
     {
+      "callsign": "LZ1MOE",
+      "type": "Личен",
+      "class": "2",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1LVL",
+      "type": "Личен",
+      "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
       "callsign": "LZ3ZQ",
       "type": "Личен",
       "class": "1",
@@ -66008,6 +66016,14 @@
       "callsign": "LZ2PSS",
       "type": "Личен",
       "class": "1",
+      "responsible": "",
+      "club_name": "",
+      "address": ""
+    },
+    {
+      "callsign": "LZ1VGV",
+      "type": "Личен",
+      "class": "2",
       "responsible": "",
       "club_name": "",
       "address": ""
